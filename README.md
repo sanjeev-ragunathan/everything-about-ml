@@ -1,5 +1,9 @@
 # Everything about ML
 
+<p align="center">
+  <img src="images/0-ml-evolution.jpg" alt="ml evolution" width="100%"/>
+</p>
+
 My journey through the entire history of machine learning - from 1943 to today.
 
 Every breakthrough. Every pivotal moment. Built with my own hands.
