@@ -1,6 +1,6 @@
 # Everything about ML
 
-A hands-on journey through the entire history of machine learning — from 1943 to today.
+A hands-on journey through the entire history of machine learning - from 1943 to today.
 
 Every breakthrough. Every pivotal moment. Built with your own hands.
 
