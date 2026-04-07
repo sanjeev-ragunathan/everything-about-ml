@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# Large data files
+*.h5
+*.pkl
+*.pickle
+
+# Model weights
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+
+# Logs
+runs/
+wandb/
