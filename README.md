@@ -28,7 +28,7 @@ Each chapter follows the same pattern:
 | Year | Milestone | Project | Status |
 |------|-----------|---------|--------|
 | 1940s–1960s | The birth of the idea | Perceptron from scratch | ✅ |
-| 1969–1980s | The first AI winter | Neural net solving XOR | 🔨 |
+| 1969–1980s | The first AI winter | Neural net solving XOR | ⬜ |
 
 ### Act 2 — The Math Age
 
