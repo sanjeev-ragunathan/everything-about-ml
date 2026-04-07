@@ -1,8 +1,8 @@
 # Everything about ML
 
-A hands-on journey through the entire history of machine learning - from 1943 to today.
+My journey through the entire history of machine learning - from 1943 to today.
 
-Every breakthrough. Every pivotal moment. Built with your own hands.
+Every breakthrough. Every pivotal moment. Built with my own hands.
 
 ---
 
@@ -12,7 +12,7 @@ Each chapter follows the same pattern:
 
 1. **The Story** — What problem existed? Who solved it? Why did it matter?
 2. **The Math** — The core ideas, distilled
-3. **The Code** — You build it
+3. **The Code** — build it
 4. **The Insight** — Why the next breakthrough had to happen
 
 ---
@@ -23,8 +23,8 @@ Each chapter follows the same pattern:
 
 | Year | Milestone | Project | Status |
 |------|-----------|---------|--------|
-| 1940s–1960s | The birth of the idea | Perceptron from scratch | ⬜ |
-| 1969–1980s | The first AI winter | Neural net solving XOR | ⬜ |
+| 1940s–1960s | The birth of the idea | Perceptron from scratch | ✅ |
+| 1969–1980s | The first AI winter | Neural net solving XOR | 🔨 |
 
 ### Act 2 — The Math Age
 
