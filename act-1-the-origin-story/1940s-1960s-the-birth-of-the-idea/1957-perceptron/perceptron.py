@@ -20,7 +20,7 @@ class Perceptron:
         weighted_sum = 0
         for i in range(self.input_size):
             weighted_sum += inputs[i] * self.weights[i]
-        if weighted_sum + self.bias >= 0: # updated formula
+        if weighted_sum + self.bias >= 0: # updated formula - step function
             return 1
         return 0
     

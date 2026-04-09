@@ -13,12 +13,13 @@ class McCullochPittsNeuron:
         self.weights = weights
         self.threshold = threshold
     
+    # step function
     def predict(self, inputs):
         n = len(inputs)
         weighted_sum = 0
         for i in range(n):
             weighted_sum += inputs[i] * self.weights[i]
-        if weighted_sum >= self.threshold:
+        if weighted_sum >= self.threshold: # step function
             return 1
         return 0
 
