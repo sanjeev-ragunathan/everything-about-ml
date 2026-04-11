@@ -37,3 +37,6 @@ wandb/
 
 # files
 playground.py
+
+# Dataset downloads
+data/
