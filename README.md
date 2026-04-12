@@ -35,13 +35,13 @@ Each chapter follows the same pattern:
 | Year | Milestone | Project | Status |
 |------|-----------|---------|--------|
 | 1980s–1990s | Classical ML rises | ML toolkit with Scikit-learn | ✅ |
-| 1998 | The first real CNN | LeNet on MNIST | ⬜ |
+| 1998 | The first real CNN | LeNet on MNIST | ✅ |
 
 ### Act 3 — The Deep Learning Revolution
 
 | Year | Milestone | Project | Status |
 |------|-----------|---------|--------|
-| 2012 | The big bang moment | AlexNet on CIFAR-10 | ⬜ |
+| 2012 | The big bang moment | AlexNet on CIFAR-10 | ✅ |
 | 2014–2015 | The architecture wars | ResNet + transfer learning | ⬜ |
 | 2014 | Sequence models | LSTM language model | ⬜ |
 | 2014 | Machines that hallucinate | DCGAN | ⬜ |
