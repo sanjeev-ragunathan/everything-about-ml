@@ -6,7 +6,7 @@
 
 My journey through the entire history of machine learning - from 1943 to today.
 
-Every breakthrough. Every pivotal moment. Built with my own hands.
+Every breakthrough. Every pivotal moment. Learnt by building.
 
 
 
@@ -15,7 +15,7 @@ Every breakthrough. Every pivotal moment. Built with my own hands.
 Each chapter follows the same pattern:
 
 1. **The Story** — What problem existed? Who solved it? Why did it matter?
-2. **The Math** — The core ideas, distilled
+2. **The Solution** — The core ideas, distilled
 3. **The Code** — Build it
 4. **The Insight** — Why the next breakthrough had to happen
 
