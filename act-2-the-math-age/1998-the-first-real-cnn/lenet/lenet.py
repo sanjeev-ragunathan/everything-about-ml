@@ -53,7 +53,7 @@ from torch.utils.data import DataLoader
 
 # DATASET
 # Load MNIST
-transform = transforms.ToTensor() # converts images to PyTorch sensors and scales pixels from [0, 255] to [0, 1]
+transform = transforms.ToTensor() # converts images to PyTorch tensors and scales pixels from [0, 255] to [0, 1]
 train_data = datasets.MNIST(root="./data", train=True, download=True, transform=transform) # download the MNIST dataset, and apply the transform to each image
 test_data = datasets.MNIST(root="./data", train=False, download=True, transform=transform)
 
