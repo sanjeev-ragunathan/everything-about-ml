@@ -7,6 +7,7 @@ DCGAN
 
 import torch
 import torch.nn as nn
+import os
 
 class Discriminator(nn.Module):
 
@@ -50,59 +51,77 @@ class Generator(nn.Module):
 
 
 
-# DATASET
-from torchvision import datasets, transforms
-transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize((0.5,), (0.5,))
-])
-mnist = datasets.MNIST(root="./data", train=True, transform=transform, download=True)
-dataloader = torch.utils.data.DataLoader(mnist, batch_size=64, shuffle=True)
-
-
-# Testing the DCGAN model
 if __name__ == "__main__":
 
-    # create both models
+
+
+    # DATASET
+    from torchvision import datasets, transforms
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.5,), (0.5,))
+    ])
+    mnist = datasets.MNIST(root="./data", train=True, transform=transform, download=True)
+    dataloader = torch.utils.data.DataLoader(mnist, batch_size=64, shuffle=True)
+
+    
+    
+    # CREATE MODELS
     discriminator = Discriminator()
     generator = Generator()
 
-    # Loss function
-    loss_fn = nn.BCELoss()
-    # optimizer
-    optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=0.0002)
-    optimizer_G = torch.optim.Adam(generator.parameters(), lr=0.0002)
+    gen_path = "generator.pth"
+    disc_path = "discriminator.pth"
 
-    # training loop
-    for epoch in range(10):
-        for real_images, _ in dataloader:
-            # 1. Train Discriminator - real images
-            optimizer_D.zero_grad()
-            
-            # learn real images
-            outputs_D_real = discriminator(real_images)
-            loss_D_real = loss_fn(outputs_D_real, torch.ones_like(outputs_D_real))
+    if os.path.exists(gen_path) and os.path.exists(disc_path):
+        print("Loading saved models...")
+        generator.load_state_dict(torch.load(gen_path))
+        discriminator.load_state_dict(torch.load(disc_path))
+    else:
+        print("Training models...")
 
-            # learn fake images
-            noise = torch.randn(64, 64) # batch_size x noise_dim
-            fake_images_G = generator(noise)
-            outputs_D_fake = discriminator(fake_images_G.detach()) # detach - prevent gradients flowing to generator during discriminator training
-            loss_D_fake = loss_fn(outputs_D_fake, torch.zeros_like(outputs_D_fake))
+        # TRAIN
 
-            loss_D = loss_D_real + loss_D_fake
-            loss_D.backward()
-            optimizer_D.step()
+        # Loss function
+        loss_fn = nn.BCELoss()
+        # optimizer
+        optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=0.0002)
+        optimizer_G = torch.optim.Adam(generator.parameters(), lr=0.0002)
 
-            # 2. Train Generator
-            optimizer_G.zero_grad()
-            outputs_D_fake = discriminator(fake_images_G)  # no detach — gradients flow to generator
-            loss_G = loss_fn(outputs_D_fake, torch.ones_like(outputs_D_fake))
-            loss_G.backward()
-            optimizer_G.step()
-        print(f"Epoch {epoch}, Loss D: {loss_D.item():.4f}, Loss G: {loss_G.item():.4f}")
+        # training loop
+        for epoch in range(100):
+            for real_images, _ in dataloader:
+                # 1. Train Discriminator
+                optimizer_D.zero_grad()
+                
+                # learn real images
+                outputs_D_real = discriminator(real_images)
+                loss_D_real = loss_fn(outputs_D_real, torch.ones_like(outputs_D_real))
+
+                # learn fake images
+                noise = torch.randn(real_images.size(0), 64) # use actual batch size instead of hardcoded 64
+                fake_images_G = generator(noise)
+                outputs_D_fake = discriminator(fake_images_G.detach()) # detach - prevent gradients flowing to generator during discriminator training
+                loss_D_fake = loss_fn(outputs_D_fake, torch.zeros_like(outputs_D_fake))
+
+                loss_D = loss_D_real + loss_D_fake
+                loss_D.backward()
+                optimizer_D.step()
+
+                # 2. Train Generator
+                optimizer_G.zero_grad()
+                outputs_D_fake = discriminator(fake_images_G)  # no detach — gradients flow to generator
+                loss_G = loss_fn(outputs_D_fake, torch.ones_like(outputs_D_fake))
+                loss_G.backward()
+                optimizer_G.step()
+            print(f"Epoch {epoch}, Loss D: {loss_D.item():.4f}, Loss G: {loss_G.item():.4f}")
+        
+        torch.save(generator.state_dict(), gen_path)
+        torch.save(discriminator.state_dict(), disc_path)
+        print("Models saved.")
+
     
-    
-    # Generate and save images
+    # GENERATE AND SAVE IMAGES
     import matplotlib.pyplot as plt
 
     generator.eval()
