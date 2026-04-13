@@ -1,4 +1,4 @@
-# everything about ml
+# evolution of ml
 
 <p align="center">
   <img src="images/0-ml-evolution.jpg" alt="ml evolution" width="100%"/>
