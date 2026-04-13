@@ -43,8 +43,8 @@ Every breakthrough. Every pivotal moment. Learnt by building.
 | Year | Milestone | Project | Status |
 |------|-----------|---------|--------|
 | 2012 | The big bang moment | AlexNet on CIFAR-10 | ✅ |
-| 2014–2015 | The architecture wars | ResNet + transfer learning | ⬜ |
-| 2014 | Sequence models | LSTM language model | ⬜ |
+| 2014–2015 | The architecture wars | ResNet + transfer learning | ✅ |
+| 2014 | Sequence models | LSTM language model | ✅ |
 | 2014 | Machines that hallucinate | DCGAN | ⬜ |
 
 ### Act 4 — The Transformer Era
