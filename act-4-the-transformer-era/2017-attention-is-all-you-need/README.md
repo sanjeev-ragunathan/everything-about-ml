@@ -17,9 +17,19 @@
     - why throw them? keep all of them
     - During decoding - each term has access to all the hidden states from encoding. But each has it's own weights. Relevant term - higher weights, vice-versa.
 - Realised why do I even need context vector or LSTMs
-- What was LSTM still bringing to the table? - ORDER'
+- What was LSTM still bringing to the table? - ORDER!
 - Be Hold - Attention is All You Need (2017) - Google
     - Transformers
-    - + Positional Encoding - to preserve ORDER
-    - self-attention (diving into cross-attention)
+    - Architecture
+    - Word Embedding
+    - Positional Encoding - to preserve ORDER
     - Q, K, V
+    - self-attention
+    - multi-head attention
+    - masked self-attention
+    - cross-attention
+    - dropout and layer norm
+- More new models
+    - BERT
+    - T5
+    - GPT
