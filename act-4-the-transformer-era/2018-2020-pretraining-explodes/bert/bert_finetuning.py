@@ -11,6 +11,8 @@ Structure:
 NOTE: We'll take the model from Hugging Face.
 '''
 
+# ruff: noqa: E402 # to ignore "imports not on top of the file" warning
+
 
 # Issue:
 # Hugging Face models expects tokenized input - not raw text.
