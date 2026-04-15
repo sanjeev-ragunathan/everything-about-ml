@@ -29,7 +29,7 @@ Every breakthrough. Every pivotal moment. Learnt by building.
 | 2014 | Sequence models | LSTM language model | ✅ |
 | 2014 | Machines that hallucinate | DCGAN | ✅ |
 | | **Act 4 - The Transformer Era** | | |
-| 2017 | Attention is all you need | Transformer from scratch | 🔨 |
+| 2017 | Attention is all you need | Transformer from scratch | ✅ |
 | 2018–2020 | Pre-training explodes | Fine-tune BERT | ⬜ |
 | 2020–2021 | Scaling laws | Prompt engineering with GPT | ⬜ |
 | | **Act 5 - The Generative Explosion** | | |
