@@ -80,7 +80,6 @@ for epoch in range(3):
 
 
 # EVALUATION
-from sklearn.metrics import accuracy_score
 model.eval()
 total, correct = 0, 0
 with torch.no_grad():
