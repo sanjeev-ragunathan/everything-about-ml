@@ -14,6 +14,9 @@ Same concept as transfer learning from ResNet — don't start from zero, start f
 
 Uses only the **encoder** half of the Transformer. No decoder. BERT isn't trying to generate text — it's trying to **understand** text.
 
+### Embedding
+Involves combining **3** matrices: **word** embedding matrix + **positional** embedding matrix + **segment** embedding matrix
+
 ### Pre-training tasks
 
 **MLM (Masked Language Modeling)** — randomly hide 15% of words, predict the missing ones:
@@ -43,6 +46,9 @@ Pre-trained on all of English Wikipedia + BookCorpus — 3.3 billion words.
 
 **G**enerative **P**re-trained **T**ransformer.
 
+GPT's depart from "transforming" of text to "generating" of text through Auto-Regressive next-word prediction.  
+Auto-Regressive text generation: make prediction - feed them back - predict the next word
+
 Uses only the **decoder** half of the Transformer. No encoder. GPT predicts the next word — left-to-right only:
 
 ```
@@ -53,6 +59,11 @@ Target: "the"
 Never looks at future words. Same idea as the Shakespeare LSTM — but with a Transformer instead of an LSTM.
 
 **Great at: generating.** Text completion, creative writing, conversation. This is what eventually becomes ChatGPT.
+
+**next-token prediction** with large no.of parameters + tokens = translation, summarization, question answering, and more ..  
+hence no need to teach specific tasks
+
+**self-supervised** - no need give it labels telling this is the next word for this sequence - giving that for all possible sequences is impractical
 
 ### Scaling up
 
@@ -81,7 +92,12 @@ BERT is a reader who sees the whole page. GPT is a writer who only sees what the
 
 These use the **full Transformer** — both encoder and decoder.
 
-**T5** (Text-to-Text Transfer Transformer) had an elegant insight: frame **every** task as text in, text out:
+**T5** (**T**ext-**t**o-**T**ext **T**ransfer **T**ransformer) had an elegant insight: frame **every** task as text in, text out:
+`text input -> text output`  
+```
+Input: “The \ sat on the \”
+Output: “\ cat \ mat”
+```
 
 ```
 "sentiment: this movie was terrible"                      → "negative"
@@ -92,13 +108,15 @@ These use the **full Transformer** — both encoder and decoder.
 
 One model. One format. Just change the prefix. No special output layers, no task-specific architectures.
 
-**BART** (Facebook) — similar idea, encoder-decoder model. Pre-trained by corrupting text (masking, deleting, shuffling sentences) and learning to reconstruct the original. Strong at summarization and generation.
+**BART** (**B**i-directional **A**uto-**R**egressive **T**ransformer) (Facebook) — similar idea, encoder-decoder model. Pre-trained by corrupting text (masking, deleting, shuffling sentences) and learning to reconstruct the original. Strong at summarization and generation.
 
 ```
 Encoder only:          BERT        → understanding
 Decoder only:          GPT         → generating
 Encoder + Decoder:     T5, BART    → both (text in → text out)
 ```
+
+What made T5 and BART so portable? -
 
 ## Fine-tuning in practice
 

@@ -15,7 +15,7 @@ Estimated training cost: **$4.6 million** in compute.
 
 ## The completely unexpected: Emergent Abilities
 
-GPT-3 started doing things it was **never trained to do**.
+GPT-2 started doing things it was **never trained to do**.
 
 Nobody taught it arithmetic — but it could answer "What is 47 + 83?" Nobody taught it translation — but it could convert English to French. Nobody taught it to code — but describe a function in English and it writes Python.
 
@@ -24,7 +24,7 @@ These abilities **emerged** from scale. They weren't in GPT-2. They appeared whe
 So the question became: how big can we go, and how will the growth be?
 
 ## Scaling Laws
-
+Emergent abilities were fine and all - but is that enough to then invest millions and billions into training the models? - this is what convinced people to invest:  
 **2020 — OpenAI (Kaplan et al.)** discovered that model performance follows **predictable mathematical laws**:
 
 ```
@@ -151,7 +151,7 @@ For heavier models (7B, 13B, 70B), local inference becomes slow or impossible wi
     - it's not about just about being big - it's about the balance between size and data.
 - The real surprise - *few-shot learning*
     - remember fine-tuning? GPT-3 could skip that.
-    - zero-shot: no context, just ask it to classify a movie review - it does it!
+    - **zero-shot**: no context, just ask it to classify a movie review - it does it!
     - **one-shot**: give it one example of a positive review - then it even classifies a negative review.
     - **few-shot**: give it a few english to french terms - then it translates any text.
     - the model learns the pattern from the prompt itself.
