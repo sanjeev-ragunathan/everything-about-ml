@@ -31,10 +31,10 @@ Every breakthrough. Every pivotal moment. Learnt by building.
 | | **Act 4 - The Transformer Era** | | |
 | 2017 | Attention is all you need | Transformer from scratch | ✅ |
 | 2018–2020 | Pre-training explodes | Fine-tune BERT | ✅ |
-| 2020–2021 | Scaling laws | Prompt engineering with GPT | ⬜ |
+| 2020–2021 | Scaling laws | Prompt engineering with GPT | ✅ |
 | | **Act 5 - The Generative Explosion** | | |
 | 2021–2022 | Diffusion & image generation | Simple diffusion model | ⬜ |
-| 2022 | ChatGPT - AI goes mainstream | Reward modeling & RLHF | ⬜ |
+| 2022 | ChatGPT - AI goes mainstream | Reward modeling & RLHF | ✅ |
 | 2023 | The open-source race | Run & fine-tune a local LLM | ⬜ |
 | | **Act 6 - The Intelligence Race** | | |
 | 2024 | Reasoning models | Chain-of-thought system | ⬜ |
