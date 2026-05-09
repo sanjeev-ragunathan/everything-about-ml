@@ -43,3 +43,7 @@ Every breakthrough. Every pivotal moment. Learnt by building.
 | 2025–2026 | Multimodal generation | Vision-language pipeline | ⬜ |
 
 > ⬜ not started · 🔨 in progress · ✅ done
+
+---
+
+> Copyright (c) 2026 Sanjeev Ragunathan. MIT License.
